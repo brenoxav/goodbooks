@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <br>
+    <%= link_to current_user.username, user_path(current_user) if logged_in? %>
+    <br>
+    <br>
+    <%= button_to 'Log out', logout_path, method: :delete if logged_in? %>
+    <hr>
     <%= yield %>
   </body>
 </html>

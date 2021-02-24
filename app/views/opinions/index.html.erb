@@ -1,0 +1,11 @@
+<h1>All opinions</h1>
+
+<ul>
+  <% @opinions.each do |opinion| %>
+    <li>
+      <%= opinion.text %><br>
+      by:
+      <%= link_to opinion.author.username, user_path(opinion.author) %>
+    </li>
+  <% end %>
+</ul>

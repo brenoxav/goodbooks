@@ -1,0 +1,8 @@
+<%= form_with model: @opinion do |form| %>
+  <%= form.label :text, 'Opinion' %>
+  <%= form.text_area :text %><br><br>
+
+  <%= form.number_field :author_id, value: current_user.id %><br><br>
+
+  <%= form.submit "Submit" %>
+<% end %>

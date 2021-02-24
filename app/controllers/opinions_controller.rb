@@ -1,4 +1,8 @@
 class OpinionsController < ApplicationController
+  def index
+    @opinions = Opinion.all
+  end
+
   def new
     @opinion = Opinion.new
   end
@@ -6,7 +10,7 @@ class OpinionsController < ApplicationController
   def create
     @opinion = Opinion.new(opinion_params)
     if @opinion.save
-      redirect_to @user, notice: "Opinion successfully posted!"
+      redirect_to opinions_url, notice: "Opinion successfully posted!"
     else
       render :new, notice: "Opinion not posted. Try again."
     end
@@ -19,7 +23,7 @@ class OpinionsController < ApplicationController
   def update
     @opinion = Opinion.find(params[:id])
     if @opinion.update(opinion_params)
-      redirect_to @user, notice: "Opinion successfully updated!"
+      redirect_to opinions_url, notice: "Opinion successfully updated!"
     else
       render :edit, notice: "Opinion not updated. Try again."
     end
