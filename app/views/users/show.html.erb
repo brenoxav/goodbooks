@@ -1,0 +1,13 @@
+<h1>User Profile</h1>
+
+<h2><%= @user.full_name %></h2>
+<p>@<%= @user.username %></p>
+<p><%= @user.photo %></p>
+<p><%= @user.cover_image %></p>
+
+<br><br>
+<%= link_to 'All users', users_path %>
+<br><br>
+<%= link_to 'Edit user', edit_user_path(@user) %>
+<br><br>
+<%= button_to 'Delete user', @user, method: :delete %>
