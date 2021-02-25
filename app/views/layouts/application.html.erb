@@ -12,6 +12,8 @@
 
   <body>
     <br>
+    <p><%= alert || notice if alert || notice %></p>
+
     <%= link_to current_user.username, user_path(current_user) if logged_in? %>
     <br>
     <br>
