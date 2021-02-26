@@ -13,3 +13,197 @@
  *= require_tree .
  *= require_self
  */
+
+ :root {
+  --main-light-color: #4f9cd6;
+  --main-dark-color: #213245;
+  --main-darker-color: #16272f;
+  --text-light-color: #677c90;
+  --text-lighter-color: #b9babc;
+  --bg-color: #f5f6f8;
+  --nav-panel-w: 200px;
+  --right-panel-w: 300px;
+}
+
+/* CSS RESET BEGIN */
+* {
+  box-sizing: border-box;
+  color: var(--text-light-color);
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 16px;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  text-decoration: none;
+}
+/* CSS RESET END */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,
+   “Segoe UI”, “Roboto”, “Oxygen”,
+   “Ubuntu”, “Cantarell”, “Fira Sans”,
+   “Droid Sans”, “Helvetica Neue”, sans-serif;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.nav-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: var(--nav-panel-w);
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--main-dark-color);
+}
+
+.nav-panel-user {
+  height: 80px;
+  padding: 0 1rem;
+  align-items: center;
+}
+
+.nav-panel-user-photo {
+  margin-right: 1rem;
+}
+
+.nav-panel-user-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: .8rem;
+  color: var(--text-light-color);
+}
+
+.nav-panel-stats {
+  justify-content: space-around;
+  height: 60px;
+  border: 1px solid var(--main-darker-color);
+}
+
+.nav-panel-stats > div  {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-label {
+  font-size: .8rem;
+  line-height: 1rem;
+}
+
+.stats-following, .stats-followers {
+  color: var(--text-lighter-color);
+}
+
+.nav-link {
+  display: block;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  height: 60px;
+  color: var(--text-light-color);
+}
+
+.nav-link:hover {
+  color: #fff;
+  background-color: var(--main-light-color);
+}
+
+.btn-logout {
+  position: absolute;
+  bottom: 0;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  background-color: var(--main-dark-color);
+  color: var(--text-light-color);
+}
+
+.nav-bar {
+  width: 100%;
+  height: 80px;
+  margin-left: var(--nav-panel-w);
+  background-color: var(--main-light-color);
+}
+
+.container {
+  margin-left: var(--nav-panel-w);
+  margin-right: var(--right-panel-w);
+}
+
+.tabs-bar {
+  align-items: flex-end;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid var(--text-lighter-color);
+  background-color: var(--bg-color);
+}
+
+.tab-item {
+  height: 100%;
+  padding: 0 1rem;
+  line-height: 4rem;
+  border-bottom: 4px solid var(--main-light-color);
+}
+
+.right-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: var(--right-panel-w);
+  height: 100%;
+  margin-top: 80px;
+  overflow-x: hidden;
+  border-left: 1px solid var(--text-lighter-color);
+  background-color: var(--bg-color);
+}
