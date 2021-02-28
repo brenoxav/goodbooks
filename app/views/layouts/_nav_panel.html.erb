@@ -1,8 +1,9 @@
+<%# LEFT NAV PANEL %>
 <% if current_user %>
 <div class="nav-panel">
 
   <div class="nav-panel-user d-flex">
-    <%= image_tag current_user.photo, size: '40', class: "nav-panel-user-photo" %>
+    <%= image_tag current_user.photo, size: '60', class: "nav-panel-user-photo" %>
     <%= link_to current_user.full_name, user_path(current_user), class: 'nav-panel-user-name uppercase' %>
   </div>
 
@@ -16,9 +17,8 @@
       <span class="stats-label">Followers</span>
     </div>
   </div>
-    
   <div>
-    <%= link_to 'Home', users_path, class: 'nav-link uppercase bold' %>
+    <%= link_to 'Home', opinions_path, class: 'nav-link uppercase bold' %>
     <%= link_to 'Connect', users_path, class: 'nav-link uppercase bold' %>
     <%= link_to 'Discover', opinions_path, class: 'nav-link uppercase bold' %>
     <%= link_to 'Profile', user_path(current_user), class: 'nav-link uppercase bold' %>
@@ -26,8 +26,6 @@
 
     <%= button_to 'Log out', logout_path, method: :delete, class: 'nav-link uppercase bold btn-logout' if logged_in? %>
   </div>
-  
-
 </div>
 <% else %>
 <div class="nav-panel">

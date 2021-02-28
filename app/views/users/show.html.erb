@@ -1,4 +1,9 @@
-<%# TAB-BAR %>
+<%# COVER IMAGE %>
+<div class="cover-image-wrapper">
+  <%= image_tag @user.cover_image, class: 'cover-image' %>
+</div>
+
+<%# TABS BAR %>
 <div class="tabs-bar d-flex">
   <%= link_to "Opinions", opinions_path, class: "tab-item uppercase bold" %>
 </div>
@@ -7,24 +12,27 @@
 <main class="main-content">
   <h1>User Profile</h1>
 
-  <%= follow_btn(@user) %>
-
-  <h2><%= @user.full_name %></h2>
-  <p>@<%= @user.username %></p>
-  <p><%= @user.photo %></p>
-  <p><%= @user.cover_image %></p>
-
-  <br><br>
-  <%= link_to 'All users', users_path %>
-  <br><br>
-  <%= link_to 'Edit user', edit_user_path(@user) %>
-  <br><br>
-  <%= button_to 'Delete user', @user, method: :delete %>
+  
 </main>
 
 <%# RIGHT PANEL %>
 <div class="right-panel">
-  <div class="who-to-follow-section">
+  <div class="profile-section">
+    <div class="profile-info">
+      <%= follow_btn(@user) %>
+      <%= image_tag @user.photo, size: '120', class: 'profile-section-photo' %>
+      <h2><%= @user.full_name %></h2>
+      <p>@<%= @user.username %></p>
+      <p><%= @user.photo %></p>
+      <p><%= @user.cover_image %></p>
+
+      <br><br>
+      <%= link_to 'All users', users_path %>
+      <br><br>
+      <%= link_to 'Edit user', edit_user_path(@user) %>
+      <br><br>
+      <%= button_to 'Delete user', @user, method: :delete %>
+    </div>
     <div class="right-panel-section-heading bold uppercase">
       <%= @user.full_name %>
     </div>
