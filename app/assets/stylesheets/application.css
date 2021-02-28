@@ -169,6 +169,9 @@ body {
 }
 
 .nav-bar {
+  position: fixed;
+  top: 0;
+  z-index: 20;
   width: 100%;
   height: 80px;
   margin-left: var(--nav-panel-w);
@@ -176,8 +179,12 @@ body {
 }
 
 .container {
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  height: 100%;
   margin-left: var(--nav-panel-w);
-  margin-right: var(--right-panel-w);
+  /* padding-right: var(--right-panel-w); */
 }
 
 .tabs-bar {
@@ -190,20 +197,74 @@ body {
 
 .tab-item {
   height: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
   line-height: 4rem;
   border-bottom: 4px solid var(--main-light-color);
 }
 
+.main-content {
+  height: 100%;
+  margin-right: calc(var(--right-panel-w) + var(--nav-panel-w));
+  padding: 2rem;
+  background-color: var(--bg-color);
+}
+
 .right-panel {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 10;
   width: var(--right-panel-w);
   height: 100%;
   margin-top: 80px;
-  overflow-x: hidden;
   border-left: 1px solid var(--text-lighter-color);
+  overflow: hidden;
   background-color: var(--bg-color);
+}
+
+.right-panel-section-heading {
+  height: 60px;
+  padding: 0 2rem;
+  line-height: 4rem;
+  border-bottom: 1px solid var(--text-lighter-color);
+}
+
+.who-to-follow-wrapper {
+  padding: 2rem;
+}
+
+.who-to-follow-card {
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.who-to-follow-photo {
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.who-to-follow-name {
+  color: var(--main-darker-color);
+}
+
+.latest-opinions {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.opinion-card {
+  padding: 1rem;
+}
+
+.opinion-card-image {
+  margin-right: 1rem;
+}
+
+.opinion-card-author {
+}
+
+.opinion-card-text {
+  line-height: 1.5rem;
+  color: var(--text-lighter-color);
 }

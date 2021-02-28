@@ -23,4 +23,16 @@ class User < ApplicationRecord
   def is_followed_by?(follower_user)
     self.followers.any? { |follower| follower == follower_user }
   end
+
+  #TODO Exclude current_user from 'latest_users' method
+  def latest_users
+    User.order(full_name: :desc).last(5)
+  end
+
+  after_initialize :set_defaults
+
+  def set_defaults
+    self.photo ||= "default-profile-photo.png"
+    self.cover_image ||= "default-cover-image.jpg"
+  end
 end
