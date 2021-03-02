@@ -1,7 +1,12 @@
-<h1>Log in</h1>
+<div class="page-container">
+  <h1>Log in</h1>
 
-<%= form_with url: :login, method: :post do |form| %>
-  <%= form.label :username %>
-  <%= form.text_field :username %>
-  <%= form.submit "Log in" %>
-<% end %>
+  <%= form_with url: :login, method: :post do |form| %>
+    <%= form.label :username %>
+    <%= form.text_field :username, required: true %>
+    <%= form.submit "Log in", class: 'button' %>
+  <% end %>
+
+  <br><br><p>Don't have an account?</p><br><br>
+  <%= link_to 'Sign up', new_user_path, class: 'button' %>
+</div>

@@ -1,13 +1,11 @@
 <%= form_with model: @user do |form| %>
   <%= form.label :username %>
-  <%= form.text_field :username %><br><br>
+  <%= form.text_field :username, minlength: 3, maxlength: 15, required: true %><br><br>
   <%= form.label :full_name %>
-  <%= form.text_field :full_name %><br><br>
+  <%= form.text_field :full_name, minlength: 3, maxlength: 50, required: true %><br><br>
   <%= form.label :photo %>
   <%= form.text_field :photo, placeholder: "Photo URL" %><br><br>
   <%= form.label :cover_image %>
   <%= form.text_field :cover_image, placeholder: "Cover image URL" %><br><br>
-  <%= form.submit "Submit" %>
+  <%= form.submit "Submit", class: 'button' %>
 <% end %>
-
-<%#TODO Make username and full_name mandatory with 15 and 50 maximum size%>

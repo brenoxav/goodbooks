@@ -9,11 +9,11 @@
 
   <div class="nav-panel-stats d-flex">
     <div class="d-flex">
-      <span class="stats-following bold"><%= current_user.followeds.count %></span>
+      <span class="stats-numbers bold"><%= current_user.followeds.count %></span>
       <span class="stats-label">Following</span>
     </div>
     <div class="d-flex">
-      <span class="stats-followers bold"><%= current_user.followers.count %></span>
+      <span class="stats-numbers bold"><%= current_user.followers.count %></span>
       <span class="stats-label">Followers</span>
     </div>
   </div>
@@ -29,6 +29,5 @@
 </div>
 <% else %>
 <div class="nav-panel">
-  <%= link_to 'Log in', login_path, type: 'button', class: 'btn btn-primary text-uppercase' %>
 </div>
 <% end %>

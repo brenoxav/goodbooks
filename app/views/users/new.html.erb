@@ -1,6 +1,8 @@
-<h1>Create Account</h1>
+<div class="page-container">
+  <h1>Create Account</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<br><br>
-<%= link_to 'All users', users_path %>
+  <br><br><p>Don't have an account?</p><br><br>
+  <%= link_to 'Log in', login_path, class: 'button' %>
+</div>

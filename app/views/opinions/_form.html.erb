@@ -4,6 +4,6 @@
     <%= form.label :text, 'Opinion', hidden: true %>
     <%= form.text_area :text, placeholder: 'Compose your opinion here', required: true, class: 'new-opinion-input' %><br><br>
     <%= form.number_field :author_id, value: current_user.id, hidden: true %>
-    <%= form.submit 'Share opinion', class: 'btn-submit-opinion' %>
+    <%= form.submit 'Share opinion', class: 'button' %>
   <% end %>
 </div>

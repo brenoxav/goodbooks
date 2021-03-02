@@ -1,7 +1,6 @@
 class FollowingsController < ApplicationController
   def create
     following = Following.new(following_params)
-    #puts ">>>>>>#{following.inspect}<<<<<"
     if following.save
       redirect_to request.referrer, notice: "Following."
     else
@@ -18,6 +17,8 @@ class FollowingsController < ApplicationController
     end
   end
 
+  private
+  
   def following_params
     params.require(:following).permit(:follower_id, :followed_id)
   end

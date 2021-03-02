@@ -15,11 +15,10 @@
   </head>
 
   <body>
+    <%= render 'layouts/notice_and_alert' %>
     <%= render 'layouts/nav_panel' %>
     <%= render 'layouts/nav_bar' %>
     <div class="container">
-      <%#TODO Style notice and alert%>
-      <p><%= alert || notice if alert || notice %></p>
       <%= yield %>    
     </div>    
 

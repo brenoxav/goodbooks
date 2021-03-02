@@ -28,12 +28,16 @@
     <div class="right-panel-section-heading bold uppercase">
       Who to follow
     </div>
-    <div class="who-to-follow-wrapper">
+    <div class="right-panel-section-wrapper">
       <% current_user.latest_users.each do |u| %>
         <% if u != current_user %>
           <div class="who-to-follow-card d-flex">
             <%= image_tag u.photo, size: '60', class: 'who-to-follow-photo' %>
-            <%= link_to u.full_name, user_path(u), class: 'who-to-follow-name bold' %>
+            <div class="who-to-follow-name-wrap d-flex">
+              <%= link_to u.full_name, user_path(u), class: 'who-to-follow-name bold' %>
+              <%= link_to "@#{u.username}", user_path(u), class: 'who-to-follow-username' %>
+            </div>
+            <%= follow_btn(u) %>
           </div>
         <% end %>
       <% end %>

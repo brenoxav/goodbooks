@@ -86,7 +86,7 @@ body {
 
 h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .d-flex {
@@ -101,6 +101,63 @@ h1 {
   font-weight: bold;
 }
 
+.button {
+  padding: .5rem 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--main-light-color);
+  color: #fff;
+  cursor: pointer;
+}
+
+.notice, .alert {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  transform: translateX(-50%);
+  z-index: 99;
+  background-color: #222a;
+}
+
+.notice {
+  color: #ee0;
+}
+
+.alert {
+  color: #f64;
+}
+
+.nav-logo {
+  margin: 1rem;
+}
+
+.page-container {
+  padding: 2rem;
+  background-color: var(--bg-color);
+}
+
+.connect-wrapper {
+  max-width: var(--right-panel-w);
+  padding: 1rem;
+  border: 1px solid var(--text-lighter-color);
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+/* NAVBAR */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  height: 80px;
+  margin-left: var(--nav-panel-w);
+  background-color: var(--main-light-color);
+}
+
+/* LEFT NAV PANEL */
 .nav-panel {
   position: fixed;
   top: 0;
@@ -140,6 +197,11 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 1;
+}
+
+.nav-panel-stats > :nth-child(1) {
+  border-right: 1px solid var(--main-darker-color);
 }
 
 .stats-label {
@@ -147,7 +209,7 @@ h1 {
   line-height: 1rem;
 }
 
-.stats-following, .stats-followers {
+.stats-numbers {
   color: var(--text-lighter-color);
 }
 
@@ -172,16 +234,6 @@ h1 {
   text-align: left;
   background-color: var(--main-dark-color);
   color: var(--text-light-color);
-}
-
-.nav-bar {
-  position: fixed;
-  top: 0;
-  z-index: 20;
-  width: 100%;
-  height: 80px;
-  margin-left: var(--nav-panel-w);
-  background-color: var(--main-light-color);
 }
 
 /* CONTAINER FOR CENTER CONTENT AND RIGHT PANEL */
@@ -230,13 +282,28 @@ h1 {
   border-bottom: 1px solid var(--text-lighter-color);
 }
 
-.who-to-follow-wrapper {
+.right-panel-section-wrapper {
   padding: 2rem;
 }
 
+/* WHO TO FOLLOW SECTION */
 .who-to-follow-card {
+  width: 100%;
   margin-bottom: 1rem;
   align-items: center;
+}
+
+.who-to-follow-card .button_to {
+  margin-left: auto;
+  width: 2rem;
+  height: 2rem;
+}
+
+.who-to-follow-card .follow-btn,
+.who-to-follow-card .unfollow-btn {
+  justify-self: flex-end;
+  width: 2rem;
+  height: 2rem;
 }
 
 .who-to-follow-photo {
@@ -244,8 +311,17 @@ h1 {
   border-radius: 50%;
 }
 
+.who-to-follow-name-wrap {
+  flex-direction: column;
+}
+
 .who-to-follow-name {
   color: var(--main-darker-color);
+}
+
+.who-to-follow-username {
+  margin-top: .4rem;
+  font-size: .9rem;
 }
 
 /* CENTER CONTENT CONTAINER */
@@ -257,6 +333,7 @@ h1 {
   background-color: var(--bg-color);
 }
 
+/* HOMEPAGE */
 /* NEW OPINION FORM */
 .new_opinion-wrapper {
   padding: 1rem;
@@ -328,12 +405,95 @@ h1 {
 }
 
 .cover-image {
-  width: 100%;
-  min-height: 100%;
   margin-right: calc(var(--right-panel-w) + var(--nav-panel-w));
 }
 
-/* RIGHT PROFILE PANEL */
-.profile-section-photo {
+.profile-opinions {
+  max-height: calc(100vh - 440px);
+}
+
+/* RIGHT PANEL PROFILE */
+.profile-section {
+  height: 300px;
+  border-bottom: 1px solid var(--text-lighter-color);
+}
+
+/* PROFILE INFO */
+.profile-actions-wrapper {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.profile-actions-items {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-info {
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 60px);
+}
+
+.profile-photo {
+  margin: 1rem 0;
   border-radius: 50%;
+}
+
+.profile-full-name {
+  margin: .4rem 0;
+}
+
+.profile-username {
+
+}
+
+.profile-stats {
+  justify-content: space-around;
+  height: 60px;
+  border-top: 1px solid var(--text-lighter-color);
+}
+
+.profile-stats > div  {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-stats > :nth-child(1),
+.profile-stats > :nth-child(2) {
+  border-right: 1px solid var(--text-lighter-color);
+}
+
+.stats-profile-number {
+  color: var(--main-darker-color);
+}
+
+.profile-followers-section {
+  
+}
+
+/* FOLLOW/UNFOLLOW BUTTON */
+.follow-btn, .unfollow-btn{
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.follow-btn {
+  background-image: url('follow-icon.png');
+}
+
+.unfollow-btn {
+  background-image: url('unfollow-icon.png');
 }

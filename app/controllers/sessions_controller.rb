@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :require_login
 
   def welcome
+    redirect_to opinions_path if logged_in?
   end
 
   def new
@@ -12,7 +13,7 @@ class SessionsController < ApplicationController
 
     if user
       session[:current_user_id] = user.id
-      redirect_to user
+      redirect_to opinions_path
     else
       redirect_to new_user_url, notice: "Username not found! Want to create an account, instead?"
     end
