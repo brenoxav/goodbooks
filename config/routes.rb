@@ -12,3 +12,4 @@ Rails.application.routes.draw do
   #resources :followings,  only: [:create, :destroy]
   resources :opinions,    only: [:index, :new, :create, :edit, :update, :destroy]
 end
+  #TODO Update routes and keep only the used ones

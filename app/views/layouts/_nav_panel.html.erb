@@ -20,10 +20,7 @@
   <div>
     <%= link_to 'Home', opinions_path, class: 'nav-link uppercase bold' %>
     <%= link_to 'Connect', users_path, class: 'nav-link uppercase bold' %>
-    <%= link_to 'Discover', opinions_path, class: 'nav-link uppercase bold' %>
     <%= link_to 'Profile', user_path(current_user), class: 'nav-link uppercase bold' %>
-    <%= link_to 'Statistics', user_path(current_user), class: 'nav-link uppercase bold' %>
-
     <%= button_to 'Log out', logout_path, method: :delete, class: 'nav-link uppercase bold btn-logout' if logged_in? %>
   </div>
 </div>

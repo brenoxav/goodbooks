@@ -1,14 +1,44 @@
-<div class="page-container">
-  <h1>Connect with People</h1>
+<%# TABS BAR %>
+<div class="tabs-bar d-flex">
+  <%= link_to "People", users_path, class: "tab-item uppercase bold" %>
+</div>
 
-  <% @users.each do |user| %>
-    <div class="who-to-follow-card d-flex connect-wrapper">
-      <%= image_tag user.photo, size: '60', class: 'who-to-follow-photo' %>
-      <div class="who-to-follow-name-wrap d-flex">
-        <%= link_to user.full_name, user_path(user), class: 'who-to-follow-name bold' %>
-        <%= link_to "@#{user.username}", user_path(user), class: 'who-to-follow-username' %>
-      </div>
-      <%= follow_btn(user) %>
+<%# MAIN CONTENT %>
+<main class="main-content">
+  <div class="latest-opinions">
+    <% @users.each do |user| %>
+      <% if user != current_user %>
+        <div class="who-to-follow-card d-flex connect-card">
+          <%= image_tag user.photo, size: '60', class: 'who-to-follow-photo' %>
+          <div class="who-to-follow-name-wrap d-flex">
+            <%= link_to user.full_name, user_path(user), class: 'who-to-follow-name bold' %>
+            <%= link_to "@#{user.username}", user_path(user), class: 'who-to-follow-username' %>
+          </div>
+          <%= follow_btn(user) %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</main>
+
+<%# YOUR FOLLOWERS RIGHT PANEL %>
+<div class="right-panel">
+  <div class="profile-followers-section">
+    <div class="right-panel-section-heading bold uppercase">
+      Your Followers
     </div>
-  <% end %>
+    <div class="right-panel-section-wrapper">
+    <%# TODO Add @handles to followers (here and on homepage) %>
+      <% current_user.followers.each do |u| %>
+        <div class="who-to-follow-card d-flex">
+          <%= image_tag u.photo, size: '60', class: 'who-to-follow-photo' %>
+          <div class="who-to-follow-name-wrap d-flex">
+            <%= link_to u.full_name, user_path(u), class: 'who-to-follow-name bold' %>
+            <%= link_to "@#{u.username}", user_path(u), class: 'who-to-follow-username' %>
+          </div>
+          <%= follow_btn(u) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
