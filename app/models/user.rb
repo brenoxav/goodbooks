@@ -9,19 +9,17 @@ class User < ApplicationRecord
   has_many :received_followings, foreign_key: :followed_id, class_name: 'Following', dependent: :delete_all
   has_many :followers, through: :received_followings, source: :follower, dependent: :delete_all
 
-
   # User is "Followed" by other Users
   # User has many "users as followeds" and has many "followings as submitted_followings"
   has_many :submitted_followings, foreign_key: :follower_id, class_name: 'Following', dependent: :delete_all
   has_many :followeds, through: :submitted_followings, source: :followed, dependent: :delete_all
 
-
-  def is_follower_of?(followed_user)
-    self.followeds.any? { |followed| followed == followed_user }
+  def follower_of?(followed_user)
+    followeds.any? { |followed| followed == followed_user }
   end
 
-  def is_followed_by?(follower_user)
-    self.followers.any? { |follower| follower == follower_user }
+  def followed_by?(follower_user)
+    followers.any? { |follower| follower == follower_user }
   end
 
   def latest_users
@@ -31,7 +29,7 @@ class User < ApplicationRecord
   after_initialize :set_defaults
 
   def set_defaults
-    self.photo ||= "default-profile-photo.png"
-    self.cover_image ||= "default-cover-image.jpg"
+    self.photo ||= 'default-profile-photo.png'
+    self.cover_image ||= 'default-cover-image.jpg'
   end
 end

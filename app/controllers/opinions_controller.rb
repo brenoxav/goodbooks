@@ -7,16 +7,16 @@ class OpinionsController < ApplicationController
   def create
     @opinion = Opinion.new(opinion_params)
     if @opinion.save
-      redirect_to opinions_url, notice: "Opinion successfully posted!"
+      redirect_to opinions_url, notice: 'Opinion successfully posted!'
     else
-      render :new, notice: "Opinion not posted. Try again."
+      render :new, notice: 'Opinion not posted. Try again.'
     end
   end
 
   def destroy
     @opinion = Opinion.find(params[:id])
     if @opinion.destroy
-      redirect_to root_path, notice: "Opinion deleted!"
+      redirect_to root_path, notice: 'Opinion deleted!'
     else
       redirect_to @opinion, notice: "Opinion couldn't be deleted."
     end

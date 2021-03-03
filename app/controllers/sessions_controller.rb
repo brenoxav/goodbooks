@@ -10,14 +10,14 @@ class SessionsController < ApplicationController
 
     if user
       session[:current_user_id] = user.id
-      redirect_to opinions_path, notice: "Logged in. Welcome!"
+      redirect_to opinions_path, notice: 'Logged in. Welcome!'
     else
-      redirect_to new_user_url, notice: "Username not found! Want to create an account, instead?"
+      redirect_to new_user_url, notice: 'Username not found! Want to create an account, instead?'
     end
   end
 
   def destroy
     reset_session
-    redirect_to root_url, notice: "Logged out."
+    redirect_to root_url, notice: 'Logged out.'
   end
 end

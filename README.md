@@ -6,11 +6,11 @@
 ![Screenshot](./screenshots/screenshot-2.png)
 
 This is my capstone project for the Ruby on Rails path of the Microverse program.
-It is my attempt at implementing an MVP version of the "Goodbooks" app with working features, such as:
-- Simple login function (session)
-- Side panel with user's info and stats and navigation links
-- Form for posting "opinions"
-- Homepage listing all user's latest "opinions"
+It is my attempt at implementing an MVP version of "Goodbooks": a twitter-like app with working features, such as:
+- Simple login function (sessions)
+- Side panel with user's info, stats and navigation links
+- Form to post "opinions"
+- Homepage listing user's latest "opinions"
 - Side panel showing suggestions for "who to follow" (homepage)
 - Userpage with their latest posted "opinions"
 - Side panel showing user's profile, stats, and followers (user page)

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:index, :new, :create]
+  skip_before_action :require_login, only: %i[index new create]
 
   def index
     @users = User.all
@@ -17,9 +17,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:current_user_id] = @user.id
-      redirect_to root_path, notice: "Account successfully created!"
-    else 
-      render :new, notice: "Account not created. Try again."
+      redirect_to root_path, notice: 'Account successfully created!'
+    else
+      render :new, notice: 'Account not created. Try again.'
     end
   end
 

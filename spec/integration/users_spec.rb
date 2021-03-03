@@ -16,7 +16,7 @@ RSpec.describe 'Users >', type: :feature do
     fill_in 'Username', with: user.username
     click_on 'Log in'
   end
-  
+
   # Tests
   feature 'Create account >' do
     scenario 'Sign up with valid information' do
