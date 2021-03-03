@@ -2,6 +2,9 @@
 
 > "Goodbooks" is a twitter-like web app for book lovers to share their opinions on their reads.
 
+![Screenshot](./screenshots/screenshot-1.png)
+![Screenshot](./screenshots/screenshot-2.png)
+
 This is my capstone project for the Ruby on Rails path of the Microverse program.
 It is my attempt at implementing an MVP version of the "Goodbooks" app with working features, such as:
 - Simple login function (session)

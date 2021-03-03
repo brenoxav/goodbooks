@@ -24,7 +24,6 @@ class User < ApplicationRecord
     self.followers.any? { |follower| follower == follower_user }
   end
 
-  #TODO Exclude current_user from 'latest_users' method
   def latest_users
     User.order(full_name: :desc).last(5)
   end

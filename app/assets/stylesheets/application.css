@@ -422,6 +422,7 @@ h1 {
 }
 
 .profile-opinions {
+  min-height: 100%;
   max-height: calc(100vh - 440px);
 }
 

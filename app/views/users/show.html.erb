@@ -11,7 +11,7 @@
 <%# MAIN CONTENT %>
 <main class="main-content profile-opinions">
   <div class="latest-opinions">
-    <% @user.opinions.each do |opinion| %>
+    <% @user.opinions.order(created_at: :desc).each do |opinion| %>
       <div class="opinion-card d-flex">
         <%= image_tag opinion.author.photo, size: '60', class: 'opinion-card-image' %>
         <div>
