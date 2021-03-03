@@ -22,9 +22,9 @@ It is my attempt at implementing an MVP version of "Goodbooks": a twitter-like a
 - Ruby on Rails 6.1.3
 - PostgreSQL 12.6
 
-<!-- ## Live Demo -->
+## Live Demo
 
-<!-- [Take a look at a live demo of this app](https://####.herokuapp.com/) -->
+[Take a look at a live demo of this app](https://goodbooks-social.herokuapp.com/)
 
 ## Getting Started
 
