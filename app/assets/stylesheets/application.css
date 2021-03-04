@@ -115,8 +115,8 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 16px;
   font: inherit;
+  font-size: 16px;
   vertical-align: baseline;
 }
 
@@ -132,10 +132,6 @@ menu,
 nav,
 section {
   display: block;
-}
-
-body {
-  line-height: 1;
 }
 
 ol,
@@ -180,6 +176,7 @@ body {
     “Droid Sans”,
     “Helvetica Neue”,
     sans-serif;
+  line-height: 1;
 }
 
 h1 {
@@ -402,6 +399,22 @@ h1 {
 }
 
 /* WHO TO FOLLOW SECTION */
+
+/* FOLLOW/UNFOLLOW BUTTON */
+.follow-btn,
+.unfollow-btn {
+  width: 2rem;
+  height: 2rem;
+  padding: 4px;
+  border: 3px solid var(--text-lighter-color);
+  border-radius: 50%;
+  color: var(--text-lighter-color);
+  font-size: 1.8rem;
+  line-height: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .who-to-follow-card {
   width: 100%;
   margin-bottom: 1rem;
@@ -580,19 +593,4 @@ h1 {
 
 .stats-profile-number {
   color: var(--main-darker-color);
-}
-
-/* FOLLOW/UNFOLLOW BUTTON */
-.follow-btn,
-.unfollow-btn {
-  width: 2rem;
-  height: 2rem;
-  padding: 4px;
-  border: 3px solid var(--text-lighter-color);
-  border-radius: 50%;
-  color: var(--text-lighter-color);
-  font-size: 1.8rem;
-  line-height: 0.5rem;
-  font-weight: bold;
-  cursor: pointer;
 }
