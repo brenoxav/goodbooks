@@ -7,7 +7,6 @@ RSpec.describe 'Opinions >', type: :feature do
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
   end
 
-  # Auxiliary methods definitions
   def sign_up(user)
     visit new_user_path
     fill_in 'Username', with: user.username
@@ -15,7 +14,6 @@ RSpec.describe 'Opinions >', type: :feature do
     click_on 'Submit'
   end
 
-  # Tests
   feature 'Post Opinion' do
     scenario 'Create a new opinion from the home page' do
       visit new_user_path

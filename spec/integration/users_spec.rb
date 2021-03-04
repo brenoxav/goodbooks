@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe 'Users >', type: :feature do
   let(:user) { User.new(username: 'brenoxav', full_name: 'Breno Xavier') }
 
-  # Auxiliary methods definitions
   def sign_up(user)
     visit new_user_path
     fill_in 'Username', with: user.username
@@ -17,7 +16,6 @@ RSpec.describe 'Users >', type: :feature do
     click_on 'Log in'
   end
 
-  # Tests
   feature 'Create account >' do
     scenario 'Sign up with valid information' do
       sign_up(user)
