@@ -45,9 +45,10 @@ To get a local copy up and running follow these steps:
 cd goodreads
 ```
 
-- Install the required gems
+- Install the required gems and dependencies
 ```
 bundle install
+yarn install
 ```
 
 - Setup the database
