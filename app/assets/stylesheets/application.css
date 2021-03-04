@@ -54,7 +54,7 @@ h1 {
 
 form input[type=text] {
   width: 100%;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .button {

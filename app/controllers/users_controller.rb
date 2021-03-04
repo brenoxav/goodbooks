@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[index new create]
 
   def index
-    @users = User.order(created_at: :desc).limit(10).filter{ |u| u != current_user }
+    @users = User.order(created_at: :desc).limit(10).filter { |u| u != current_user }
   end
 
   def show
