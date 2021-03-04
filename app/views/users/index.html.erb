@@ -1,9 +1,7 @@
-<%# TABS BAR %>
 <div class="tabs-bar d-flex">
   <%= link_to "People", users_path, class: "tab-item uppercase bold" %>
 </div>
 
-<%# MAIN CONTENT %>
 <main class="main-content">
   <div class="latest-opinions">
     <% @users.each do |user| %>
@@ -21,14 +19,12 @@
   </div>
 </main>
 
-<%# YOUR FOLLOWERS RIGHT PANEL %>
 <div class="right-panel">
   <div class="profile-followers-section">
     <div class="right-panel-section-heading bold uppercase">
       Your Followers
     </div>
     <div class="right-panel-section-wrapper">
-    <%# TODO Add @handles to followers (here and on homepage) %>
       <% current_user.followers.each do |u| %>
         <div class="who-to-follow-card d-flex">
           <%= image_tag u.photo, size: '60', class: 'who-to-follow-photo' %>
