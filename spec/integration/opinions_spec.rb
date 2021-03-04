@@ -27,4 +27,14 @@ RSpec.describe 'Opinions >', type: :feature do
       expect(page).to have_content('Opinion successfully posted!')
     end
   end
+
+  scenario 'Try to create a new opinion from the home page with invalid input' do
+    visit new_user_path
+    sign_up(user)
+    visit opinions_path
+    fill_in 'opinion_text', with: nil
+    click_on 'Share opinion'
+
+    expect(page).not_to have_content('Opinion successfully posted!')
+  end
 end

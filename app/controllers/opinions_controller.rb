@@ -9,7 +9,7 @@ class OpinionsController < ApplicationController
     if @opinion.save
       redirect_to opinions_url, notice: 'Opinion successfully posted!'
     else
-      render :new, notice: 'Opinion not posted. Try again.'
+      redirect_to request.referrer, alert: 'Opinion not posted. Try again.'
     end
   end
 
