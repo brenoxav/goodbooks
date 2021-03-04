@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
   def index
-    @opinions = Opinion.all.order(created_at: :desc)
+    @opinions = Opinion.order(created_at: :desc).includes(:author).limit(10)
     @opinion = Opinion.new
   end
 
