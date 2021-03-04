@@ -18,8 +18,8 @@ class User < ApplicationRecord
     followers.any? { |follower| follower == follower_user }
   end
 
-  def latest_users
-    User.order(full_name: :desc).last(5)
+  def follow_suggestions
+    User.order(created_at: :desc).last(5).filter{ |u| !u.followed_by?(self) && u != self }
   end
 
   after_initialize :set_defaults

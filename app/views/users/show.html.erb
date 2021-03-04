@@ -8,12 +8,12 @@
 
 <main class="main-content profile-opinions">
   <div class="latest-opinions">
-    <% @user.opinions.order(created_at: :desc).each do |opinion| %>
+    <% @opinions.each do |opinion| %>
       <div class="opinion-card d-flex">
         <%= image_tag opinion.author.photo, size: '60', class: 'opinion-card-image' %>
         <div>
           <%= link_to opinion.author.full_name, user_path(opinion.author), class: 'opinion-card-author bold' %>
-          <span class="opinion-date"><%= post_date_time(opinion.created_at) %></span>
+          <span class="opinion-date"><%= time_ago_in_words(opinion.created_at) %></span>
           <p class="opinion-card-text"><%= opinion.text %></p>
         </div>
       </div>
@@ -25,7 +25,7 @@
   <div class="profile-section">
     <div class="profile-info d-flex">
       <div class="profile-actions-wrapper d-flex">
-        <span class="profile-actions-items d-flex"><%= follow_btn(@user) if @user != current_user %></span>
+        <span class="profile-actions-items d-flex"><%= follow_btn(@user) %></span>
         <span class="profile-actions-items d-flex"><%= image_tag @user.photo, size: '100', class: 'profile-photo' %></span>
         <span class="profile-actions-items d-flex"></span>
       </div>

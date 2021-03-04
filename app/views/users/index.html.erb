@@ -5,16 +5,14 @@
 <main class="main-content">
   <div class="latest-opinions">
     <% @users.each do |user| %>
-      <% if user != current_user %>
-        <div class="who-to-follow-card d-flex connect-card">
-          <%= image_tag user.photo, size: '60', class: 'who-to-follow-photo' %>
-          <div class="who-to-follow-name-wrap d-flex">
-            <%= link_to user.full_name, user_path(user), class: 'who-to-follow-name bold' %>
-            <%= link_to "@#{user.username}", user_path(user), class: 'who-to-follow-username' %>
-          </div>
-          <%= follow_btn(user) %>
+      <div class="who-to-follow-card d-flex connect-card">
+        <%= image_tag user.photo, size: '60', class: 'who-to-follow-photo' %>
+        <div class="who-to-follow-name-wrap d-flex">
+          <%= link_to user.full_name, user_path(user), class: 'who-to-follow-name bold' %>
+          <%= link_to "@#{user.username}", user_path(user), class: 'who-to-follow-username' %>
         </div>
-      <% end %>
+        <%= follow_btn(user) %>
+      </div>
     <% end %>
   </div>
 </main>
