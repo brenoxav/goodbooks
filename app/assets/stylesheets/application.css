@@ -311,8 +311,6 @@ h1 {
 
 .who-to-follow-card .button_to {
   margin-left: auto;
-  width: 2rem;
-  height: 2rem;
 }
 
 .who-to-follow-card .follow-btn,
@@ -486,20 +484,12 @@ h1 {
 
 /* FOLLOW/UNFOLLOW BUTTON */
 .follow-btn, .unfollow-btn{
-  width: 40px;
-  height: 40px;
-  border: none;
-  background-color: transparent;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding: 4px;
+  border: 3px solid var(--text-lighter-color);
+  border-radius: 50%;
+  color: var(--text-lighter-color);
+  font-size: 1.8rem;
+  line-height: .5rem;
+  font-weight: bold;
   cursor: pointer;
-}
-
-.follow-btn {
-  background-image: url('follow-icon.png');
-}
-
-.unfollow-btn {
-  background-image: url('unfollow-icon.png');
 }

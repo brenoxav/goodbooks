@@ -1,14 +1,14 @@
 module ApplicationHelper
   def follow_btn(followed_user)
     if !current_user.follower_of?(followed_user)
-      button_to '', followings_path,
+      button_to '+', followings_path,
                 params: { following: {
                   follower_id: current_user.id,
                   followed_id: followed_user.id
                 } },
                 class: 'follow-btn'
     else
-      button_to '', following_path(1), method: :delete,
+      button_to '-', following_path(1), method: :delete,
                                        params: { following: {
                                          follower_id: current_user.id,
                                          followed_id: followed_user.id
