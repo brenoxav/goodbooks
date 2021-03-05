@@ -27,7 +27,7 @@ Metrics/BlockLength:
   ExcludedMethods: ["describe"]
   Max: 50
 Metrics/ModuleLength:
-  Max: 130
+  Max: 120
 
 Style/Documentation:
   Enabled: false

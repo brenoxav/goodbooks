@@ -10,8 +10,8 @@
   </head>
 
   <body>
-    <%= render 'layouts/notice_and_alert' %>
-    <%= render 'layouts/nav_panel' %>
+    <%= notice_and_alert %>
+    <div class="nav-panel"> <%= nav_panel %> </div>
     <%= render 'layouts/nav_bar' %>
     <div class="container">
       <%= yield %>    
