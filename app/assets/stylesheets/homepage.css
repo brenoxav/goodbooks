@@ -1,0 +1,91 @@
+/* NEW OPINION FORM */
+.new_opinion-wrapper {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.new-opinion-heading {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-lighter-color);
+}
+
+.new-opinion-input {
+  width: 100%;
+  max-width: 100%;
+  height: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.new-opinion-input::placeholder {
+  font-size: 1rem;
+}
+
+/* LATEST OPINIONS */
+.latest-opinions {
+  margin-bottom: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+
+.opinion-card {
+  position: relative;
+  padding: 1rem;
+}
+
+.opinion-card-image {
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+}
+
+.opinion-date {
+  position: absolute;
+  right: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-lighter-color);
+}
+
+.opinion-card-text {
+  line-height: 1.5rem;
+  color: var(--text-lighter-color);
+}
+
+/* WHO TO FOLLOW SECTION */
+.who-to-follow-card {
+  width: 100%;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.who-to-follow-card .button_to {
+  margin-left: auto;
+}
+
+.who-to-follow-card .follow-btn,
+.who-to-follow-card .unfollow-btn {
+  justify-self: flex-end;
+  width: 2rem;
+  height: 2rem;
+}
+
+.who-to-follow-photo {
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.who-to-follow-name-wrap {
+  flex-direction: column;
+}
+
+.who-to-follow-name {
+  color: var(--main-darker-color);
+}
+
+.who-to-follow-username {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,38 @@
+<div class="tabs-bar d-flex">
+  <%= link_to "People", users_path, class: "tab-item uppercase bold" %>
+</div>
+
+<main class="main-content">
+  <div class="latest-opinions">
+    <% @users.each do |user| %>
+      <div class="who-to-follow-card d-flex connect-card">
+        <%= image_tag user.photo, size: '60', class: 'who-to-follow-photo' %>
+        <div class="who-to-follow-name-wrap d-flex">
+          <%= link_to user.full_name, user_path(user), class: 'who-to-follow-name bold' %>
+          <%= link_to "@#{user.username}", user_path(user), class: 'who-to-follow-username' %>
+        </div>
+        <%= follow_btn(user) %>
+      </div>
+    <% end %>
+  </div>
+</main>
+
+<div class="right-panel">
+  <div class="profile-followers-section">
+    <div class="right-panel-section-heading bold uppercase">
+      Your Followers
+    </div>
+    <div class="right-panel-section-wrapper">
+      <% current_user.followers.each do |u| %>
+        <div class="who-to-follow-card d-flex">
+          <%= image_tag u.photo, size: '60', class: 'who-to-follow-photo' %>
+          <div class="who-to-follow-name-wrap d-flex">
+            <%= link_to u.full_name, user_path(u), class: 'who-to-follow-name bold' %>
+            <%= link_to "@#{u.username}", user_path(u), class: 'who-to-follow-username' %>
+          </div>
+          <%= follow_btn(u) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

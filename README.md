@@ -1,24 +1,92 @@
-# README
+# Goodbooks: Social network for book lovers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> "Goodbooks" is a twitter-like web app for book lovers to share their opinions on their reads.
 
-Things you may want to cover:
+![Screenshot](./screenshots/screenshot-1.png)
+![Screenshot](./screenshots/screenshot-2.png)
 
-* Ruby version
+This is my capstone project for the Ruby on Rails path of the Microverse program.
+It is my attempt at implementing an MVP version of "Goodbooks": a twitter-like app with working features, such as:
+- Simple login function (sessions)
+- Side panel with user's info, stats and navigation links
+- Form to post "opinions"
+- Homepage listing user's latest "opinions"
+- Side panel showing suggestions for "who to follow" (homepage)
+- Userpage with their latest posted "opinions"
+- Side panel showing user's profile, stats, and followers (user page)
+- Button to "follow" users
 
-* System dependencies
+## Built With
 
-* Configuration
+- Ruby 3.0.0
+- Ruby on Rails 6.1.3
+- PostgreSQL 12.6
 
-* Database creation
+## Live Demo
 
-* Database initialization
+[Take a look at a live demo of this app](https://goodbooks-social.herokuapp.com/)
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+To get a local copy up and running follow these steps:
 
-* Deployment instructions
+### Prerequisites
 
-* ...
+- Ruby: >=3.0.0
+- Rails: >=6.1.3
+- Postgres: >=12.6
+
+### Setup
+
+- Clone or download the project to your local machine
+
+- Change to the project's root directory
+```
+cd goodreads
+```
+
+- Install the required gems and dependencies
+```
+bundle install
+yarn install
+```
+
+- Setup the database
+```
+rails db:create
+rails db:migrate
+```
+
+- Start the server
+```
+rails server
+```
+
+- Access the application's web interface on your browser
+```
+http://localhost:3000/
+```
+### Testing
+
+- To execute the included unit and integration tests
+```
+rspec
+```
+
+## Author
+
+👨‍💻 **Breno Xavier**
+
+- GitHub: [@brenoxav](https://github.com/brenoxav)
+- Twitter: [@brenoxav](https://twitter.com/brenoxav)
+- LinkedIn: [Breno Xavier](https://linkedin.com/in/brenoxav)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Gregoire Vella](https://www.behance.net/gregoirevella), for the concept design
+- Microverse
+- Odin Project

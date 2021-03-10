@@ -1,0 +1,67 @@
+<div class="cover-image-wrapper">
+  <%= image_tag @user.cover_image, class: 'cover-image' %>
+</div>
+
+<div class="tabs-bar d-flex">
+  <%= link_to "Opinions", opinions_path, class: "tab-item uppercase bold" %>
+</div>
+
+<main class="main-content profile-opinions">
+  <div class="latest-opinions">
+    <% @opinions.each do |opinion| %>
+      <div class="opinion-card d-flex">
+        <%= image_tag opinion.author.photo, size: '60', class: 'opinion-card-image' %>
+        <div>
+          <%= link_to opinion.author.full_name, user_path(opinion.author), class: 'opinion-card-author bold' %>
+          <span class="opinion-date"><%= time_ago_in_words(opinion.created_at) %></span>
+          <p class="opinion-card-text"><%= opinion.text %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
+
+<div class="right-panel">
+  <div class="profile-section">
+    <div class="profile-info d-flex">
+      <div class="profile-actions-wrapper d-flex">
+        <span class="profile-actions-items d-flex"><%= follow_btn(@user) %></span>
+        <span class="profile-actions-items d-flex"><%= image_tag @user.photo, size: '100', class: 'profile-photo' %></span>
+        <span class="profile-actions-items d-flex"></span>
+      </div>
+      <h2 class="profile-full-name uppercase bold"><%= @user.full_name %></h2>
+      <p class="profile-username">@<%= @user.username %></p>
+    </div>
+    <div class="profile-stats d-flex">
+      <div class="d-flex">
+        <span class="stats-profile-numbers bold"><%= @user.opinions.count %></span>
+        <span class="stats-label">Opinions</span>
+      </div>
+      <div class="d-flex">
+        <span class="stats-profile-numbers bold"><%= @user.followeds.count %></span>
+        <span class="stats-label">Following</span>
+      </div>
+      <div class="d-flex">
+        <span class="stats-profile-numbers bold"><%= @user.followers.count %></span>
+        <span class="stats-label">Followers</span>
+      </div>
+    </div>
+  </div>
+  <div class="profile-followers-section">
+    <div class="right-panel-section-heading bold uppercase">
+      Followed by
+    </div>
+    <div class="right-panel-section-wrapper">
+      <% @user.followers.each do |u| %>
+        <div class="who-to-follow-card d-flex">
+          <%= image_tag u.photo, size: '60', class: 'who-to-follow-photo' %>
+          <div class="who-to-follow-name-wrap d-flex">
+            <%= link_to u.full_name, user_path(u), class: 'who-to-follow-name bold' %>
+            <%= link_to "@#{u.username}", user_path(u), class: 'who-to-follow-username' %>
+          </div>
+          <%= follow_btn(u) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

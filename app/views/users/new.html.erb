@@ -1,2 +1,8 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="page-container">
+  <h1>Create Account</h1>
+
+  <%= render 'form' %>
+
+  <br><br><p>Don't have an account?</p><br><br>
+  <%= link_to 'Log in', login_path, class: 'button' %>
+</div>

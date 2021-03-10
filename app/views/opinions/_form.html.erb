@@ -1,0 +1,9 @@
+<div class="new_opinion-wrapper latest-opinions">
+  <h2 class="new-opinion-heading uppercase bold">Share your opinion on books</h2>
+  <%= form_with model: @opinion do |form| %>
+    <%= form.label :text, 'Opinion', hidden: true %>
+    <%= form.text_area :text, placeholder: 'Compose your opinion here', required: true, class: 'new-opinion-input' %><br><br>
+    <%= form.number_field :author_id, value: current_user.id, hidden: true %>
+    <%= form.submit 'Share opinion', class: 'button' %>
+  <% end %>
+</div>

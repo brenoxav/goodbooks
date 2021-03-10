@@ -1,0 +1,8 @@
+.connect-card {
+  width: 100%;
+  padding: 1rem;
+}
+
+.connect-card:hover {
+  background-color: var(--bg-color);
+}
